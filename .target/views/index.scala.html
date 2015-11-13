@@ -1,0 +1,61 @@
+@(message: String)
+
+@main("FMU | Corpo Docente") {
+	
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<div class="span10 hero-unit">
+
+		<div class="span12" align="center">
+			<p><small>
+			O <strong> Complexo Educacional FMU</strong>, que reune as Faculdades Metropolitanas Unidas (FMU), Faculdades Integradas de S&atilde;o Paulo (FISP) e FIAM-FAAM Centro Universit&aacute;io, &eacute; refer&ecirc;ncia na qualidade de ensino e empregabilidade de seus alunos h&aacute; mais de 45 anos. Atualmente, a institui&ccedil;&atilde;o oferece cursos em diversas areas do conhecimento, ministrados na Gradua&ccedil;&atilde;o, P&oacute;s-gradua&ccedil;&atilde;o (Especializa&ccedil;&atilde;o e MBA), cursos de Extens&atilde;o e Mestrados em Direito, Sa&uacute;de Ambiental, Arquitetura e Administra&ccedil;&atilde;o (Acad&ecirc;mico e Profissional). Al&eacute;m disso, possui estrutura moderna, campi de f&aacute;cil acesso e professores especialistas, mestres e doutores, que oferecem aos estudantes um ensino diferenciado e inovador.
+			</small></p>
+
+			<br>
+
+				<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'>
+				</script>
+				<div style='overflow:hidden;height:350px;width:400px;'>
+					<div id='gmap_canvas' style='height:350px;width:400px;'>
+					</div>
+					<style>#gmap_canvas img{max-width:none!important;background:none!important}
+					</style>
+				</div>
+				<a href='http://maps-generator.com/pt'>.</a>
+				<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=f4621fe2f0ff308bf93d3c85f583d7248a60c4af'>
+				</script>
+				<script type='text/javascript'>function init_map() {
+				var myOptions = {
+					zoom:17,center:new google.maps.LatLng(-23.5607649,-46.63787709999997),
+					mapTypeId: google.maps.MapTypeId.TERRAIN};
+					map = new google.maps.Map(
+						document.getElementById('gmap_canvas'),
+						myOptions
+					);
+					marker = new google.maps.Marker({
+						map: map,
+						position: new google.maps.LatLng(-23.5607649,-46.63787709999997)
+					});
+					infowindow = new google.maps.InfoWindow({
+						content:'<div align="center"><strong>FMU</strong><br>Avenida Liberdade, 899<br> São Paulo - SP<br></div>'
+					});
+					google.maps.event.addListener(
+						marker, 'click', function(){
+							infowindow.open(map,marker);
+						}
+					);
+					infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
+				</script>
+					
+				</div>		
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+
+}

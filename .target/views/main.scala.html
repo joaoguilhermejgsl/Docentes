@@ -1,0 +1,89 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+<!-- TEMPLATE PADRAO --- APLICATIVOS BY ANDRE F. M. BATISTA -->
+<html>
+    <head>
+    	<!-- define o titulo da pagina -->
+        <title>@title</title>
+      
+ <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+ <link href="@routes.Assets.at("bootstrap/css/bootstrap.min.css")" rel="stylesheet" media="screen">
+ <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon2.ico")">
+ <script src="@routes.Assets.at("javascripts/jquery-1.9.1.min.js")" type="text/javascript"></script>
+   </head>
+   
+   <body>
+    
+    <!-- Para exibicao de conteudo flash 
+     	 Por padrão, existem duas areas: success e error
+     	 Ambas contam com um link capaz de fazer estas div sumirem
+    
+    --> 
+    
+    
+    @if(flash.containsKey("success")){
+		<div class="alert alert-success">
+		<a class="close" data-dismiss="alert">x</a>
+		@flash.get("success")
+		</div>
+	}
+	@if(flash.containsKey("error")){
+		<div class="alert alert-error">
+		<a class="close" data-dismiss="alert">x</a>
+		@flash.get("error")
+		</div>
+	}
+	<!-- fim conteudp flash -->
+	
+	
+	
+	<!-- BARRA TOPO -->
+	
+	@components.topbar()
+	
+	
+			
+	</p>
+	
+	 <!--
+	<div class="hero-unit">
+		<h1> NOME DA APLICACAO </h1> 	
+	</div>
+		
+	<span class="label label-warning"> Atenção: sistema em fase de testes </span>
+	
+	</p> -->
+	
+	<!-- Divisao da Pagina em 2 partes -->	
+
+	<div class="container-fluid">
+		<div class="row-fluid">	
+                 
+			@if(session.contains("connected")) {
+					@components.menu()
+			}
+			<div class="">
+				<!-- BODY CONTENT -->
+				@content
+			</div>
+		</div>
+	</div>
+		<br>
+		<br>
+      <hr>
+
+	<!-- RODAPE  -->
+            <footer>
+            <div align = "center">
+            <p>&copy; 2015 FMU - Faculdades Metropolitanas Unidas | Corpo Docente </p>
+	   <!--
+	   <p>&copy; 2015 <span class="label label-important"> FMU </span>  Corpo Docente | Faculdades Metropolitanas Unidas</p>
+	    --> 
+		    </div>
+		    </footer>
+
+
+</body>
+
+</html>

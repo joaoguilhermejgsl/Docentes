@@ -1,0 +1,41 @@
+@(formdocente: Form[docente])
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("FMU | Corpo Docente") {
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<div class align="center">
+			<h3>Cadastro de Docente</h3>
+			<p><small>Nome, Graduação e Data de Admissão são obrigatórios</small>
+		</div>
+	
+
+
+@form(routes.Admin.addNovodocente(), 'enctype -> "multipart/form-data") {
+<div class="span10" align="center">
+  
+	
+		@inputText(formdocente("nome"),'_label -> "Nome")
+		@inputText(formdocente("grad"),'_label -> "Graduação")
+		@inputText(formdocente("ie_grad"),'_label -> "Instituição de Graduação")
+		@inputText(formdocente("pgrad"),'_label -> "Pós-Graduação")
+		@inputText(formdocente("ie_pgrad"),'_label -> "Instituição de Pós-Graduação")
+		@inputText(formdocente("mest"),'_label -> "Mestrado")
+		@inputText(formdocente("ie_mest"),'_label -> "Instituição de Mestrado")
+		@inputText(formdocente("dout"),'_label -> "Doutorado")
+		@inputText(formdocente("ie_dout"),'_label -> "Instituiç;ão de Doutorado")
+		@inputText(formdocente("ano_adm"),'_label -> "Ano de Admissão")
+		
+		
+			
+			Foto: <input type="file" name="picture"> </input>
+		<button type="submit" value="enviar" class="btn btn-small btn-inverse">Enviar</button>
+		<br>
+		<br>
+		<input type="submit" class="btn btn-danger" value="Cadastrar">
+</div>
+		
+	}
+}

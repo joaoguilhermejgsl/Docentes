@@ -1,0 +1,40 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                       controllers.Admin.index()
+
+POST	/docente/details		controllers.Admin.listaDocente()
+
+# Cadastro
+GET 	/cadastro				controllers.Application.cadastro()
+POST	/addcadastro			controllers.Application.addCadastro()
+
+#ADD
+GET		/adddocente				controllers.Admin.adddocente()
+POST	/adddocente				controllers.Admin.addNovodocente()
+
+#DEL
+GET /professor/:id/del			controllers.Admin.delDocente(id: Long)
+
+#EDIT
+GET  /adddocente				controllers.Admin.editDocente(id: Long)
+
+#VISUALIZAR
+GET		/visudocente			controllers.Admin.visudocente()
+
+#Sobre
+GET 	/sobre					controllers.Admin.sobre()
+
+# Authentication
+GET     /login                 controllers.Application.login()
+POST    /login                 controllers.Application.authenticate()
+GET     /logout                controllers.Application.logout()
+
+# Imagem
+GET		/getImg/:id				controllers.Admin.getImage(id: Long)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

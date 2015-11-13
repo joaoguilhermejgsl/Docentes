@@ -1,0 +1,84 @@
+@(professores: List[docente])
+@main("FMU | Corpo Docente") {
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<div class="span6" align="right">
+
+		<form classs="form-search" action="@routes.Admin.listaDocente()" method="POST">
+			<div class="input-append">
+    			<input type="text" name="nome" class="span6 search-query">
+    			<button type="submit" class="btn"><i class="icon-search"></i> Procurar outro Docente...</button>
+  			</div>
+		</form>
+		</div>
+	</div>
+
+<br><br><br><br>
+
+<div class="span10" align="center">		
+
+	@if(professores == null) {	
+		@for(professor <- docente.find.all()) {
+
+<div class="span10" align="center">	
+			<div class="span5">
+				<div align = "center">
+				<img style="height:12rem; width:12rem;" src="@routes.Admin.getImage(professor.id)" class="img-polaroid">
+				</div>
+			</div>
+			
+		  <div class="span5" align = "center">
+			<p>Nome:  <strong>@professor.nome</strong></p>
+			<p>Gradução: <strong>@professor.grad</strong></p>
+			<p>Instituição de Graduação: <strong>@professor.ie_grad</strong></p>
+			<p>Pos-Graduacao: <strong>@professor.pgrad</strong></p>
+			<p>Instituição de Pos-Graduação: <strong>@professor.ie_pgrad</strong></p>
+			<p>Mestrado: <strong>@professor.mest</strong></p>
+			<p>Instituição de Mestrado: <strong>@professor.ie_mest</strong></p>
+			<p>Doutorado: <strong>@professor.dout</strong></p>
+			<p>Instituição de Doutorado: <strong>@professor.ie_dout</strong></p>
+			<p>Ano de admissão na FMU: <strong>@professor.ano_adm</strong></p>
+			<br>
+
+			<a href = "@routes.Admin.delDocente(professor.id)"><span class="label label-important"> remover</span></a>
+			<a href = "@routes.Admin.editDocente(professor.id)"><span class="label label-info"> editar</span></a>
+			<hr>
+			<br>
+	      </div>	
+</div>
+		}
+		} else {
+		
+		@for(professor <- professores) {
+
+<div class="span10" align="center">	
+			<div class="span5">
+				<div align = "center">
+				<img style="height:12rem; width:12rem;" src="@routes.Admin.getImage(professor.id)" class="img-polaroid">
+				</div>
+			</div>
+			
+		  <div class="span5" align = "center">
+			<p>Nome:  <strong>@professor.nome</strong></p>
+			<p>Gradução: <strong>@professor.grad</strong></p>
+			<p>Instituição de Graduação: <strong>@professor.ie_grad</strong></p>
+			<p>Pos-Graduacao: <strong>@professor.pgrad</strong></p>
+			<p>Instituição de Pos-Graduação: <strong>@professor.ie_pgrad</strong></p>
+			<p>Mestrado: <strong>@professor.mest</strong></p>
+			<p>Instituição de Mestrado: <strong>@professor.ie_mest</strong></p>
+			<p>Doutorado: <strong>@professor.dout</strong></p>
+			<p>Instituição de Doutorado: <strong>@professor.ie_dout</strong></p>
+			<p>Ano de admissão na FMU: <strong>@professor.ano_adm</strong></p>
+			<br>
+
+
+			<hr>
+			<br>
+	      </div>	
+</div>
+		}
+		}
+	
+}

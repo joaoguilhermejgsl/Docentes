@@ -1,0 +1,10 @@
+users: 
+- !!models.User
+        email: admin@fmu.br
+        name: usuario adminitrador
+        password: $2a$10$s0fMS1nGtEUglfeqzOcvxuwFqS98EZA2eTT682LenexYRnZZJHVpC
+- !!models.User
+        email: joaoguilhermejgsl@fmu.br
+        name: Joao Guilherme
+        password: $2a$10$tcS.8o1TRksXbUE/udMYEunMKjNX66ARS/mO87FqrqmS/o86FZSmO
+

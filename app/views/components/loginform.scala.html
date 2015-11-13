@@ -1,0 +1,39 @@
+@(formLogin: Form[Application.Login])
+
+
+
+        @helper.form(routes.Application.authenticate) {
+			<br>
+            <br>  
+            <h3><p class="text-error">Efetue o Login para ter acesso ao Corpo Docente</p></h3>
+            <br>
+            <br>
+            
+            @if(formLogin.hasGlobalErrors) { 
+                <p class="error">
+                    @formLogin.globalError.message
+                </p>
+            }
+            
+            @if(flash.contains("success")) {
+                <p class="success">
+                    @flash.get("success")
+                </p>
+            }
+            
+            <p>
+                <input type="email" name="email" placeholder="Email" value="@formLogin("email").value">
+            </p>
+            <p>
+                <input type="password" name="password" placeholder="Senha">
+            </p>
+            <p>
+               	<input type="submit" value="Login" class="btn btn-danger">
+            </p>
+            <p>
+               <a href="@routes.Application.cadastro()" ><span class="btn btn-inverse">	 Cadastrar </a> </span>
+            </p>
+           
+        }
+
+    

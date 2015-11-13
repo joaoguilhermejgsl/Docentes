@@ -1,0 +1,42 @@
+<!-- BARRA TOPO -->
+	
+
+	<div class="navbar">
+	<div class="navbar-inner">
+		<div class="progress">
+  			<div class="bar bar-danger" style="width: 100%;"></div>
+		</div>	
+ <!--  -->
+		<div class="span8">
+			<a class="brand" href="@routes.Admin.index()"><img src="@routes.Assets.at("images/logo_fmu1.png")" class=class="img-rounded"></a>
+		</div>
+			
+<!-- SPAN PARA LOGIN -->
+
+	<span class="navbar-text pull-right"> 
+		@if(session.contains("connected")) {
+			Bem vindo <i class="icon-user"></i> @session.get("connected") <a href="@routes.Application.logout"> <span class="label label-important"> <i class="icon-home"></i>  Sair</span> </a>
+		} else {
+			<a  href="@routes.Application.login"> <span class="label label-important"><i class="icon-home"></i> Login <span>  </a> 
+		}
+	</span>
+<!-- FIM SPAN PARA LOGIN -->
+		<!--  
+		<ul class="nav">
+			 <li class="divider-vertical"></li>
+			 <li><a class="brand" href="#"><img src="@routes.Assets.at("images/docentes.png")" class=class="img-rounded"></a> </li>
+		</ul>
+		-->
+</div>
+</div>		
+</p>
+	
+			<!-- FIM BARRA TOPO -->
+			
+			<!-- 
+			<ul class="nav">
+			 			<li class="divider-vertical"></li>
+			 		</ul>
+				<a class="brand" href="@routes.Admin.index()"><img src="@routes.Assets.at("images/logo_fmu3.png")" class=class="img-rounded"></a>
+			 --> 
+			 	

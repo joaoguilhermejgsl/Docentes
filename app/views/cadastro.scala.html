@@ -1,0 +1,27 @@
+@(formUser: Form[User])
+@import helper._
+@import helper.twitterBootstrap._
+@main("FMU | Cadastro") {
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<div align = "center" class="span11">
+	<br>
+	<br>
+	@form(routes.Application.addCadastro())  {
+		
+			@inputText(formUser("name"), '_label -> "Nome:")
+			@inputText(formUser("email"), '_label -> "E-mail:")
+  			@inputPassword(formUser("password"), '_label -> "Senha:")
+			<select class="span2">
+			<option>Aluno</option>
+  			<option>Professor</option>
+  			<option>Coordenação</option>
+			</select>
+			<br>
+			<input type="submit" class="btn btn-danger" value="Cadastrar">
+			<input class="btn btn-inverse" type="reset" value="Limpar" >
+	}
+</div>
+}

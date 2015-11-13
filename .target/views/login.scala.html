@@ -1,0 +1,14 @@
+@(formLogin: Form[Application.Login])
+@import helper._
+@import helper.twitterBootstrap._
+@main("FMU | Autenticação Necessária") {
+
+<body>
+	<div align = "center">
+		@components.loginform(formLogin)
+	</div>
+</body>  
+
+                
+  }
+    

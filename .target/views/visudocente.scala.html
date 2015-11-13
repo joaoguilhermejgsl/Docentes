@@ -1,0 +1,57 @@
+@main("FMU | Corpo Docente") {
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<div class="span10" align="center">
+	
+		<div class="span5">
+  			<select>
+  				<option>Ciencias Exatas</option>
+ 				<option>Ciencias Humanas</option>
+  				<option>Ciencias Biologicas</option>
+  				<option>Tecnologia  </option>
+			</select>
+		</div>
+		
+		<div class="span5">
+		<form class="form-search">
+			<div class="input-append">
+    			<input type="text" class="span6 search-query">
+    			<button type="submit" class="btn"><i class="icon-search"></i> Procurar outro Docente...</button>
+  			</div>
+		</form>
+		</div>
+	</div>
+
+<br><br><br><br>
+
+<div class="span10" align="center">			
+		@for(professor <- docente.find.all()) {
+
+<div class="span10" align="center">	
+			<div class="span5">
+				<div align = "center">
+					<img src="@routes.Assets.at("images/perfil_1.jpg")" class="img-polaroid">
+				</div>
+			</div>
+			
+		  <div class="span5" align = "center">
+			<p>Nome:  <strong>@professor.nome</strong></p>
+			<p>Gradução: <strong>@professor.grad</strong></p>
+			<p>Instituição de Graduação: <strong>@professor.ie_grad</strong></p>
+			<p>Pos-Graduacao: <strong>@professor.pgrad</strong></p>
+			<p>Instituição de Pos-Graduação: <strong>@professor.ie_pgrad</strong></p>
+			<p>Mestrado: <strong>@professor.mest</strong></p>
+			<p>Instituição de Mestrado: <strong>@professor.ie_mest</strong></p>
+			<p>Doutorado: <strong>@professor.dout</strong></p>
+			<p>Instituição de Doutorado: <strong>@professor.ie_dout</strong></p>
+			<p>Ano de admissão na FMU: <strong>@professor.ano_adm</strong></p>
+			<br>
+			<hr>
+			<br>
+	      </div>	
+</div>
+		}
+	
+}
